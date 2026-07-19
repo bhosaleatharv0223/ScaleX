@@ -1,0 +1,114 @@
+ScaleX — Figma AI Design Prompt
+
+Copy everything in the code block below into your Figma AI design tool. Attach the 5 images in this order when it asks for reference/brand assets:
+
+
+1000333184.jpg — "Are you a real estate developer?" hero-style creative
+1000333185.jpg — "Clients Growth is Our True North" split-tone brand creative
+1000333187.jpg — "Nashik's First Dedicated Real Estate Marketing Mandate Partner" creative
+1000333188.jpg — "TheAddress is now ScaleX" rebrand announcement
+1000333189.jpg — ScaleX logo lockup (Brand. Leads. Sales.)
+
+
+
+Design a premium, modern B2B website for "ScaleX" — a real estate marketing 
+and growth agency positioned as a "Real Estate Marketing Mandate Partner" for 
+property developers. Tagline: "Brand. Leads. Sales." Positioning line: 
+"Beyond an Agency. Beyond Advertising."
+
+BRAND ASSETS PROVIDED (use these as the visual and tonal reference):
+- Attached images show the existing brand identity: black/white "scalex" 
+  wordmark with a green "X," a green-black-white color system, handshake 
+  and partnership photography, clean sans-serif typography, and a confident, 
+  corporate-premium tone. One image shows the brand's prior name "TheAddress" 
+  transitioning to "ScaleX" — use this only as brand history context, not 
+  as a visual element on the live pages.
+- Extract the exact green from the logo as the primary accent color. Pair 
+  it with near-black (not pure black) for text/headlines and an off-white 
+  background (not pure white) for warmth.
+- Match the geometric sans-serif style of the "scalex" wordmark for headline 
+  typography; pair with a clean, highly readable sans for body text.
+
+DESIGN DIRECTION:
+Style reference: neilpatel.com's authority-driven structure, adapted to a 
+smaller B2B real estate audience — restrained, institutional confidence 
+rather than loud marketing-hype visuals. Generous whitespace, large 
+confident typography, subtle motion cues (not flashy), real photography 
+over stock-looking graphics where possible. Avoid generic "startup SaaS" 
+gradients/blobs — this audience is real estate developers, not consumers.
+
+PAGES TO DESIGN (in this order):
+
+1. HOME
+   - Hero: headline "Turn Unsold Inventory Into Booked Sales." with 
+     subhead "ScaleX helps real estate developers build stronger brands, 
+     generate qualified leads, and accelerate sales — through a single, 
+     accountable partnership." Primary CTA button: "Book a Strategy Call." 
+     Use handshake/partnership photography from the attached references 
+     as hero background or side visual.
+   - Logo bar section directly below hero (placeholder client logos, 
+     grayscale, evenly spaced)
+   - Results strip: 3 stat blocks in large type (placeholder numbers, 
+     e.g. "20+ Years Experience," "X% Increase in Qualified Leads," 
+     "X Projects Delivered")
+   - "Beyond an Agency. Beyond Advertising." section explaining the 
+     mandate-partner positioning vs a normal ad agency
+   - Three/four pillar cards: Strategic Brand Positioning / Qualified 
+     Lead Generation / Sales Acceleration / Accountable Partnership — 
+     icon + short headline + one-line description each, in a clean 
+     grid layout
+   - Flagship case study block: large feature card with project name, 
+     result headline, and a "Read the full story" link
+   - Testimonial section: single quote, developer name/title, subtle 
+     quotation mark graphic
+   - Final CTA band: full-width green or dark section, "Ready to Scale 
+     Your Sales?" headline, CTA button
+
+2. SERVICES
+   - Page header with H1 "One Partner. Every Stage of the Sale."
+   - Four stacked sections, one per pillar (Brand Positioning, Lead 
+     Generation, Sales Acceleration, Accountable Partnership), each with 
+     a headline, 2-3 sentence description, and a supporting visual or icon
+   - Consistent layout pattern across all four so the page feels rhythmic, 
+     not repetitive
+
+3. CASE STUDIES
+   - Grid or stacked list of 2-3 case study cards: project image, result 
+     headline (e.g. "204% increase in qualified site visits"), short 
+     teaser, "Read case study" link
+   - Individual case study template: challenge / approach / result 
+     structure with a hero stat pulled out in large type
+
+4. ABOUT
+   - "TheAddress is now ScaleX" story section — this is the one place 
+     the rebrand creative (image 4) can appear directly
+   - 20+ years credibility section
+   - Optional team/founder section
+
+5. CONTACT
+   - Split layout: short contact form (Name, Company, Phone/Email, 
+     Project Stage dropdown) on one side, direct contact details 
+     (phone, email, address, map) and social links (Facebook, 
+     Instagram) on the other
+   - "What Happens After You Submit" 3-step mini section below the form
+
+GLOBAL ELEMENTS:
+- Sticky/simple top nav: Home, Services, Case Studies, About, Contact, 
+  with a CTA button ("Book a Call") always visible in the nav
+- Footer: logo, tagline, nav links repeated, social icons (Facebook, 
+  Instagram), contact info, copyright
+
+Deliver as a responsive design (desktop + mobile breakpoints) using an 
+8px spacing system, ready to hand off as a component-based design system 
+(buttons, cards, section templates) rather than one-off static pages.
+
+
+After Figma generates the first pass
+
+Things to manually check/fix — AI design tools are decent at layout but often get these wrong:
+
+
+Contrast: green-on-white CTA buttons sometimes fail accessibility contrast — check against WCAG AA before finalizing
+Real vs placeholder copy: swap any Lorem Ipsum or generic AI-written copy with your actual pillar descriptions from the build brief
+Icon consistency: AI tools often mix icon styles across sections — pick one icon set (e.g. Lucide, Phosphor) and enforce it manually
+Image cropping: your uploaded photography may get stretched or oddly cropped by the AI — recrop manually to match your brand's existing photography style

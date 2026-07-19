@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64">
+  <rect width="100%" height="100%" fill="#ffffff" rx="12"/>
+  <defs>
+    <linearGradient id="adsBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#2A5DD6"/>
+    </linearGradient>
+  </defs>
+  <path d="M42 18l24 14-24 14V18z" fill="#34A853"/>
+  <path d="M66 18h24l-12 28L66 18z" fill="#FBBC05"/>
+  <path d="M90 18h24l-12 28L90 18z" fill="url(#adsBlue)"/>
+  <text x="128" y="38" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#111">Google Ads</text>
+</svg>
