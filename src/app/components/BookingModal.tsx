@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
-import { InlineWidget } from "react-calendly";
 import { useBooking } from "../context/BookingContext";
 
-// Replace with your actual Calendly event URL
-const BOOKING_URL = "https://calendly.com/scalex/strategy-call";
 // Replace with your admin WhatsApp number in international format without + or spaces
 const ADMIN_WHATSAPP_NUMBER = "919876543210";
 
@@ -14,6 +11,8 @@ export function BookingModal() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [projectStage, setProjectStage] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
   const [message, setMessage] = useState("");
   const [hasNotifiedAdmin, setHasNotifiedAdmin] = useState(false);
 
@@ -25,16 +24,16 @@ export function BookingModal() {
       `Email: ${email || "(not provided)"}`,
       `Phone: ${phone || "(not provided)"}`,
       `Project stage: ${projectStage || "(not provided)"}`,
+      `Preferred date: ${selectedDate || "(not provided)"}`,
+      `Preferred time: ${selectedTime || "(not provided)"}`,
       "",
       `Message: ${message || "(not provided)"}`,
-      "",
-      `Calendly booking page: ${BOOKING_URL}`,
       "",
       "Please follow up and confirm the final date/time with the client.",
     ];
 
     return encodeURIComponent(lines.join("\n"));
-  }, [name, email, phone, projectStage, message]);
+  }, [name, email, phone, projectStage, selectedDate, selectedTime, message]);
 
   const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
@@ -151,6 +150,30 @@ export function BookingModal() {
                     </select>
                   </label>
 
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <label className="block">
+                      <span className="text-sm font-medium">Preferred Date *</span>
+                      <input
+                        type="date"
+                        value={selectedDate}
+                        onChange={(event) => setSelectedDate(event.target.value)}
+                        className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                        required
+                      />
+                    </label>
+
+                    <label className="block">
+                      <span className="text-sm font-medium">Preferred Time *</span>
+                      <input
+                        type="time"
+                        value={selectedTime}
+                        onChange={(event) => setSelectedTime(event.target.value)}
+                        className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                        required
+                      />
+                    </label>
+                  </div>
+
                   <label className="block">
                     <span className="text-sm font-medium">Message</span>
                     <textarea
@@ -176,7 +199,7 @@ export function BookingModal() {
                     Notify Admin on WhatsApp
                   </button>
                   <p className="text-xs text-muted-foreground">
-                    After choosing a date/time in Calendly, tap the button to send the booking details to admin WhatsApp.
+                    After choosing a date and time, tap the button to send the booking details to admin WhatsApp.
                   </p>
                   {hasNotifiedAdmin ? (
                     <p className="text-sm text-accent">
@@ -189,13 +212,23 @@ export function BookingModal() {
 
             <div className="lg:w-1/2 overflow-y-auto">
               <div className="p-6">
-                <div className="mb-4 text-sm font-medium">Choose a date and time</div>
-                <InlineWidget
-                  url={BOOKING_URL}
-                  styles={{
-                    height: "600px",
-                  }}
-                />
+                <div className="mb-4 text-sm font-medium">Selected slot</div>
+                <div className="rounded-3xl border border-border bg-slate-50 p-5 space-y-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Date</p>
+                    <p className="mt-2 text-lg font-semibold text-foreground">{selectedDate || "No date selected"}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Time</p>
+                    <p className="mt-2 text-lg font-semibold text-foreground">{selectedTime || "No time selected"}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-4 border border-border">
+                    <p className="text-sm font-medium">Important</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Select a preferred date and time, then notify the admin on WhatsApp so they can confirm the call.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
