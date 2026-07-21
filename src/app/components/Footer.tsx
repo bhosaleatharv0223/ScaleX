@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import logoImage from "../../imports/1000333189-1.jpg";
