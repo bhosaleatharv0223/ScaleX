@@ -13,7 +13,7 @@ export function Footer() {
             <ImageWithFallback 
               src={logoImage} 
               alt="ScaleX Logo" 
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto object-contain"
             />
             <p className="text-sm text-primary-foreground/70">
               Brand. Leads. Sales.
