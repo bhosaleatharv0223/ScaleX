@@ -2,15 +2,12 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Target, TrendingUp, Zap, Handshake, Building2, Users, Trophy, Calendar } from "lucide-react";
-import { LogoMarquee } from "../components/LogoMarquee";
 import { PlatformCards } from "../components/PlatformCards";
 import { ServiceCard } from "../components/ServiceCard";
-import { CaseStudyCard } from "../components/CaseStudyCard";
 import { TestimonialCarousel } from "../components/TestimonialCarousel";
 import { HeroBackground } from "../components/HeroBackground";
 import { useBooking } from "../context/BookingContext";
 export function Home() {
-  const [activeCategory, setActiveCategory] = useState("all");
   const { openBooking } = useBooking();
   const clientLogos = [
     { name: "Godrej Properties", src: "/logos/godrej-properties.png", alt: "Godrej Properties logo" },
@@ -53,45 +50,6 @@ export function Home() {
       description:
         "One accountable growth partner for your full marketing journey—from positioning to leads and sales acceleration.",
       href: "/services#mandate-partner",
-    },
-  ];
-
-  const caseStudies = [
-    {
-      projectName: "Godrej Riverside",
-      category: "Residential",
-      teaser: "Premium apartments in Pune's prime location needed to convert awareness into sales",
-      stats: [
-        { label: "Increase in Site Visits", value: "204%" },
-        { label: "Cost per Lead", value: "-38%" },
-      ],
-    },
-    {
-      projectName: "Brigade Orchards",
-      category: "Plotted Development",
-      teaser: "Large-scale plotted community launch targeting NRI and investment buyers",
-      stats: [
-        { label: "Lead Quality Score", value: "8.4/10" },
-        { label: "Units Sold", value: "127" },
-      ],
-    },
-    {
-      projectName: "Prestige Tech Park",
-      category: "Commercial",
-      teaser: "Office space launch in emerging tech corridor required B2B positioning",
-      stats: [
-        { label: "Enterprise Leads", value: "43" },
-        { label: "Occupancy Rate", value: "92%" },
-      ],
-    },
-    {
-      projectName: "Oberoi Sky City",
-      category: "Luxury",
-      teaser: "Ultra-luxury high-rise targeting HNI buyers in Mumbai metro",
-      stats: [
-        { label: "Avg Deal Value", value: "₹4.2Cr" },
-        { label: "Sales Velocity", value: "+156%" },
-      ],
     },
   ];
 
@@ -153,11 +111,6 @@ export function Home() {
     },
   ];
 
-  const filteredCaseStudies =
-    activeCategory === "all"
-      ? caseStudies
-      : caseStudies.filter((cs) => cs.category.toLowerCase() === activeCategory.toLowerCase());
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -206,12 +159,19 @@ export function Home() {
                   </Link>
                 </motion.div>
                 <div className="mt-4 sm:mt-6">
-                  <LogoMarquee
-                      logos={clientLogos}
-                      background="transparent"
-                      speed={32}
-                      logoHeight={28}
-                    />
+                  <div className="mx-auto max-w-xl rounded-[2rem] border border-white/10 bg-slate-950/85 p-6 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+                    <div className="text-center">
+                      <span className="inline-flex rounded-full bg-accent/15 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-accent">
+                        Premium Professional
+                      </span>
+                      <h3 className="mt-4 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+                        Trusted by leading developers
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-300">
+                        A premium endorsement stripe for top-tier real estate marketing partners.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -395,52 +355,6 @@ export function Home() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-12 sm:py-14 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl sm:text-4xl mb-4">Real Results, Real Developers</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Every case study shows specific outcomes: lead quality, cost efficiency,
-              and sales velocity.
-            </p>
-
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {["all", "Residential", "Commercial", "Luxury", "Plotted Development"].map(
-                (category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveCategory(category)}
-                    className={`px-6 py-2 rounded-lg text-sm transition-all ${
-                      activeCategory === category
-                        ? "bg-accent text-accent-foreground"
-                        : "bg-muted text-muted-foreground hover:bg-accent/10"
-                    }`}
-                  >
-                    {category === "all" ? "All Projects" : category}
-                  </button>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredCaseStudies.map((caseStudy, idx) => (
-              <CaseStudyCard key={idx} {...caseStudy} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/case-studies"
-              className="inline-block border-2 border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              View All Case Studies
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-14 sm:py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
